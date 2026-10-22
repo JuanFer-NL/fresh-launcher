@@ -9,6 +9,8 @@
   Todo lo demás está a un deslizamiento de distancia.
 </p>
 
+<p align="center"><strong>Sin anuncios · Sin rastreo · Sin cuentas</strong></p>
+
 <p align="center">
   <a href="README.md">English</a> ·
   <a href="LICENSE">Licencia MIT</a> ·
@@ -93,7 +95,7 @@ app/src/main/java/com/fresh/launcher/
 
 ## Contribuir
 
-Los issues y pull requests son bienvenidos. Antes de abrir un PR ejecutá `./gradlew testDebugUnitTest lintDebug`; la integración continua corre lo mismo en cada push.
+Los issues y pull requests son bienvenidos. En [CONTRIBUTING.md](CONTRIBUTING.md) está cómo compilar, probar y agregar traducciones o fondos, y los issues con la etiqueta [good first issue](https://github.com/JuanFer-NL/fresh-launcher/labels/good%20first%20issue) son un buen punto de partida. Las preguntas e ideas van en [Discussions](https://github.com/JuanFer-NL/fresh-launcher/discussions).
 
 ## Créditos
 

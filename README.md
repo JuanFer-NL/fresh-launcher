@@ -9,6 +9,8 @@
   Everything else is one swipe away.
 </p>
 
+<p align="center"><strong>No ads · No tracking · No accounts</strong></p>
+
 <p align="center">
   <a href="README.es.md">Español</a> ·
   <a href="LICENSE">MIT License</a> ·
@@ -93,7 +95,7 @@ app/src/main/java/com/fresh/launcher/
 
 ## Contributing
 
-Issues and pull requests are welcome. Please run `./gradlew testDebugUnitTest lintDebug` before opening a PR. CI runs the same checks on every push.
+Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to build, test and add translations or wallpapers, and look for issues labeled [good first issue](https://github.com/JuanFer-NL/fresh-launcher/labels/good%20first%20issue). Questions and ideas go to [Discussions](https://github.com/JuanFer-NL/fresh-launcher/discussions).
 
 ## Credits
 
