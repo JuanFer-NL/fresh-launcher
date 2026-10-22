@@ -19,3 +19,6 @@ keystore.properties
 # Herramientas de Claude Code de terceros (agentes y skills con sus propias licencias)
 .claude/
 .impeccable/
+
+# Instrucciones locales para Claude Code (no se publican)
+CLAUDE.md
