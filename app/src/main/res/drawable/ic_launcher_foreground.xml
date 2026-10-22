@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- "F." : la F con barras redondeadas como la pill "Apps", y el punto de las favoritas.
+     Todo dentro de la zona segura de 66 dp del ícono adaptable. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group>
+        <path
+            android:fillColor="#CFFF2E"
+            android:pathData="M41,30a6,6 0 0 1 6,6v36a6,6 0 0 1 -12,0v-36a6,6 0 0 1 6,-6z" />
+        <path
+            android:fillColor="#CFFF2E"
+            android:pathData="M41,30h24a6,6 0 0 1 0,12h-24a6,6 0 0 1 0,-12z" />
+        <path
+            android:fillColor="#CFFF2E"
+            android:pathData="M41,49h16a6,6 0 0 1 0,12h-16a6,6 0 0 1 0,-12z" />
+    </group>
+    <path
+        android:fillColor="#00DF1A"
+        android:pathData="M61,72a6,6 0 1 0 12,0a6,6 0 1 0 -12,0z" />
+</vector>

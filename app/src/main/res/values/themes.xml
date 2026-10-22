@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.Launcher" parent="android:Theme.Material.Light.NoActionBar">
+        <!-- Mostrar el fondo de pantalla hace que Android use la transición de "volver al inicio"
+             (como Launcher3) en lugar del deslizamiento lateral de cambio de app.
+             El fondo elegido es el fondo de pantalla del sistema (WallpaperApplier). -->
+        <item name="android:windowShowWallpaper">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+</resources>

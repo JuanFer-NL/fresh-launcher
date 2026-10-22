@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Idiomas de la app para el idioma por app de Android 13+ (Ajustes → Apps → Idioma).
+     Deben coincidir con AppLanguage en Settings.kt y con las carpetas values-*. -->
+<locale-config xmlns:android="http://schemas.android.com/apk/res/android">
+    <locale android:name="en" />
+    <locale android:name="es" />
+</locale-config>

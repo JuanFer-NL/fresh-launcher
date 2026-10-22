@@ -1,0 +1,21 @@
+# Gradle y compilación
+.gradle/
+build/
+.kotlin/
+captures/
+
+# Configuración local: rutas del SDK y clave de firma (nunca se suben)
+local.properties
+keystore.properties
+*.jks
+*.keystore
+
+# IDEs y sistema
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Herramientas de Claude Code de terceros (agentes y skills con sus propias licencias)
+.claude/
+.impeccable/

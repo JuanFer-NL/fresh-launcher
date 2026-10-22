@@ -1,0 +1,50 @@
+<resources>
+    <string name="apps">Apps</string>
+    <string name="search_apps">Buscar apps</string>
+    <string name="no_results">No hay ninguna app llamada “%1$s”</string>
+    <string name="favorites_empty">Mantené presionada una app en el cajón para fijarla acá.</string>
+    <string name="add_to_home">Agregar a inicio</string>
+    <string name="remove_from_home">Quitar de inicio</string>
+    <string name="home_full">Inicio lleno (%1$d/%2$d)</string>
+    <string name="app_info">Información de la app</string>
+
+    <string name="weather_enable">Tocá para ver el clima</string>
+    <string name="weather_clear">Despejado</string>
+    <string name="weather_partly_cloudy">Algo nublado</string>
+    <string name="weather_cloudy">Nublado</string>
+    <string name="weather_fog">Niebla</string>
+    <string name="weather_drizzle">Llovizna</string>
+    <string name="weather_rain">Lluvia</string>
+    <string name="weather_snow">Nieve</string>
+    <string name="weather_storm">Tormenta</string>
+
+    <string name="settings">Configuración</string>
+    <string name="back">Volver</string>
+    <string name="language">Idioma</string>
+    <string name="language_system">Idioma del sistema</string>
+    <string name="temperature_unit">Unidad de temperatura</string>
+    <string name="celsius">Celsius (°C)</string>
+    <string name="fahrenheit">Fahrenheit (°F)</string>
+    <string name="auto_keyboard">Abrir el teclado automáticamente</string>
+    <string name="auto_keyboard_desc">Al abrir el cajón de apps, el buscador queda listo para escribir.</string>
+
+    <string name="wallpaper">Fondo de pantalla</string>
+    <string name="wallpaper_hint">Se aplica a la pantalla de inicio y a la de bloqueo.</string>
+    <string name="wallpaper_fresh">Fresco</string>
+    <string name="wallpaper_citrus">Cítrico</string>
+    <string name="wallpaper_mint">Menta</string>
+    <string name="wallpaper_sky">Cielo</string>
+    <string name="wallpaper_lilac">Lila</string>
+    <string name="wallpaper_coral">Coral</string>
+    <string name="wallpaper_terracotta">Terracota</string>
+    <string name="auto_wallpaper_prefix">Cambiar automáticamente cada</string>
+    <plurals name="auto_wallpaper_days">
+        <item quantity="one">día</item>
+        <item quantity="many">días</item>
+        <item quantity="other">días</item>
+    </plurals>
+    <string name="fewer_days">Menos días</string>
+    <string name="more_days">Más días</string>
+
+    <string name="weather_attribution">Datos del clima: Open-Meteo.com</string>
+</resources>

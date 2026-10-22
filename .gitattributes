@@ -1,0 +1,5 @@
+# Finales de línea correctos para los scripts del wrapper en cualquier sistema
+gradlew text eol=lf
+*.bat text eol=crlf
+*.jar binary
+*.ttf binary

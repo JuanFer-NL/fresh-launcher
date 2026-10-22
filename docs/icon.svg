@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="108" height="108">
+  <!-- Fresh Launcher icon: same geometry as app/src/main/res/drawable/ic_launcher_*.xml -->
+  <defs>
+    <radialGradient id="glow" cx="96" cy="104" r="78" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00DF1A" stop-opacity="0.75"/>
+      <stop offset="0.55" stop-color="#003D1B" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#121212" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="shape"><rect width="108" height="108" rx="30"/></clipPath>
+  </defs>
+  <g clip-path="url(#shape)">
+    <rect width="108" height="108" fill="#121212"/>
+    <rect width="108" height="108" fill="url(#glow)"/>
+    <g fill="#CFFF2E">
+      <path d="M41,30a6,6 0 0 1 6,6v36a6,6 0 0 1 -12,0v-36a6,6 0 0 1 6,-6z"/>
+      <path d="M41,30h24a6,6 0 0 1 0,12h-24a6,6 0 0 1 0,-12z"/>
+      <path d="M41,49h16a6,6 0 0 1 0,12h-16a6,6 0 0 1 0,-12z"/>
+    </g>
+    <path fill="#00DF1A" d="M61,72a6,6 0 1 0 12,0a6,6 0 1 0 -12,0z"/>
+  </g>
+</svg>
