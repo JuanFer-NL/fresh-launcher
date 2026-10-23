@@ -1,0 +1,1 @@
+Primera versión pública: reloj en dos tonos y clima, hasta 7 favoritas en texto, cajón de apps con búsqueda y 7 fondos con variantes claras y oscuras. Inglés y español, con ajustes de idioma, unidades de temperatura y teclado del cajón. Sin anuncios, analíticas ni cuentas.

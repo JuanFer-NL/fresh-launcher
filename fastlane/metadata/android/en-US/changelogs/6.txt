@@ -1,0 +1,1 @@
+First public release: two-tone clock and weather, up to 7 text favorites, app drawer with search, and 7 wallpapers with light and dark variants. English and Spanish, with settings for language, temperature units and the drawer keyboard. No ads, analytics or accounts.

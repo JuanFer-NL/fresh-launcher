@@ -1,0 +1,15 @@
+Fresh Launcher es una pantalla de inicio minimalista para Android: un reloj grande, el clima y unas pocas favoritas. Todo lo demás está a un deslizamiento de distancia.
+
+Funciones:
+- Reloj en dos tonos con la fecha y el clima actual.
+- Hasta 7 favoritas en texto. Mantené presionada y arrastrá para reordenar, o mantené presionada y soltá para quitarla.
+- Cajón de apps con búsqueda que ignora tildes y mayúsculas. Deslizá hacia arriba o tocá Apps; con Ir en el teclado se abre el primer resultado.
+- 7 fondos con degradé difuso y variantes claras y oscuras que siguen el tema del sistema. Pueden cambiar solos cada 1 a 30 días.
+- Inglés y español, formato de 12 o 24 horas del sistema y respeto por la opción Quitar animaciones.
+- Configuración de idioma, grados Celsius o Fahrenheit y apertura del teclado junto con el cajón.
+
+Sin anuncios, analíticas, rastreadores ni cuentas. El clima es opcional: la ubicación se solicita solo después de tocar Tocá para ver el clima. Las coordenadas se redondean a dos decimales (aproximadamente 1 km) antes de enviarse a Open-Meteo para consultar el pronóstico.
+
+Al elegir un degradé, se aplica como fondo de pantalla del sistema en inicio y bloqueo. Si después elegís un fondo propio, Fresh Launcher lo conserva hasta que selecciones otro degradé.
+
+Requiere Android 8.0 o posterior. La selección de idioma por app requiere Android 13 o posterior.

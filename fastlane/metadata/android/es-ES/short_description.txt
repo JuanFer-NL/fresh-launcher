@@ -1,0 +1,1 @@
+Una pantalla de inicio con reloj, clima y favoritas en texto
