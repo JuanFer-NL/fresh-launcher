@@ -1,1 +1,1 @@
-Una pantalla de inicio con reloj, clima y favoritas en texto
+Launcher minimalista: reloj, clima y favoritas. Sin anuncios ni rastreo.

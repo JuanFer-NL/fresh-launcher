@@ -1,1 +1,1 @@
-A minimal home screen with a big clock, weather and text favorites
+Minimal launcher: big clock, weather and text favorites. No ads, no tracking.
