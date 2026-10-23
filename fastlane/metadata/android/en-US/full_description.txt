@@ -1,0 +1,15 @@
+Fresh Launcher is a minimal home screen for Android: a big clock, the weather and a handful of favorites. Everything else is one swipe away.
+
+Features:
+- Two-tone clock with the date and current weather.
+- Up to 7 favorites as plain text. Long-press and drag to reorder, or long-press and release to remove.
+- App drawer with search that ignores accents and case. Swipe up or tap Apps, then press Go on the keyboard to open the first result.
+- 7 mesh-gradient wallpapers with light and dark variants that follow the system theme. Optionally rotate them every 1-30 days.
+- English and Spanish, system 12/24-hour time, and support for the system's Remove animations setting.
+- Settings for language, Celsius or Fahrenheit, and whether the keyboard opens with the drawer.
+
+No ads, analytics, trackers or accounts. Weather is optional: location is requested only after you tap Tap for weather. Coordinates are rounded to two decimals (about 1 km) before being sent to Open-Meteo for the forecast.
+
+Choosing a gradient sets the system wallpaper on both the home and lock screens. If you later choose your own wallpaper, Fresh Launcher keeps it until you select another gradient.
+
+Requires Android 8.0 or later. Per-app language selection requires Android 13 or later.
