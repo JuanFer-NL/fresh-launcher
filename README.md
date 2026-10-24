@@ -24,6 +24,10 @@
   <img src="docs/screenshots/en-settings.webp" width="200" alt="Settings: wallpapers, language, units">
 </p>
 
+<p align="center">
+  <a href="https://github.com/JuanFer-NL/fresh-launcher/releases/latest"><strong>⬇ Download the latest APK</strong></a> · Android 8+ · Also available through <a href="#install">Obtainium</a>
+</p>
+
 ## Features
 
 - **Two-tone clock** with the date and current weather underneath.
@@ -38,6 +42,16 @@
 
 - Android 8.0 (API 26) or later. Tested on a Samsung Galaxy A56 with Android 16.
 - Per-app language needs Android 13 or later.
+
+## Install
+
+1. Download `fresh-launcher-X.Y.Z.apk` from the [latest release](https://github.com/JuanFer-NL/fresh-launcher/releases/latest) on your phone.
+2. Open it and allow installing apps from your browser or file manager if Android asks.
+3. Press the home button and choose **Fresh Launcher**, or set it in *Settings → Apps → Default apps → Home app*.
+
+Heads-up: the first time it opens, Fresh Launcher sets its gradient as your wallpaper on the home and lock screens (see [Permissions and privacy](#permissions-and-privacy)).
+
+To get updates automatically, add `https://github.com/JuanFer-NL/fresh-launcher` in [Obtainium](https://github.com/ImranR98/Obtainium). Every release is signed with the same key; you can verify it as described in [SECURITY.md](SECURITY.md#verifying-a-release).
 
 ## Build from source
 

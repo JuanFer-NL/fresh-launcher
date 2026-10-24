@@ -24,6 +24,10 @@
   <img src="docs/screenshots/es-settings.webp" width="200" alt="Configuración: fondos, idioma y unidades">
 </p>
 
+<p align="center">
+  <a href="https://github.com/JuanFer-NL/fresh-launcher/releases/latest"><strong>⬇ Descargar la última APK</strong></a> · Android 8+ · También con <a href="#instalar">Obtainium</a>
+</p>
+
 ## Funciones
 
 - **Reloj en dos tonos**, con la fecha y el clima actual debajo.
@@ -38,6 +42,16 @@
 
 - Android 8.0 (API 26) o posterior. Probado en un Samsung Galaxy A56 con Android 16.
 - El idioma por app necesita Android 13 o posterior.
+
+## Instalar
+
+1. Desde el teléfono, descargá `fresh-launcher-X.Y.Z.apk` de la [última versión](https://github.com/JuanFer-NL/fresh-launcher/releases/latest).
+2. Abrila y, si Android lo pide, permití instalar apps desde el navegador o el administrador de archivos.
+3. Tocá el botón de inicio y elegí **Fresh Launcher**, o configuralo en *Ajustes → Aplicaciones → Aplicaciones predeterminadas → Aplicación de inicio*.
+
+Aviso: la primera vez que se abre, Fresh Launcher pone su degradé como fondo de pantalla de inicio y de bloqueo (ver [Permisos y privacidad](#permisos-y-privacidad)).
+
+Para recibir las actualizaciones automáticamente, agregá `https://github.com/JuanFer-NL/fresh-launcher` en [Obtainium](https://github.com/ImranR98/Obtainium). Todas las versiones están firmadas con la misma clave; podés verificarla como explica [SECURITY.md](SECURITY.md#verifying-a-release).
 
 ## Compilar desde el código
 
