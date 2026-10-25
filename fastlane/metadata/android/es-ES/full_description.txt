@@ -10,6 +10,6 @@ Funciones:
 
 Sin anuncios, analíticas, rastreadores ni cuentas. El clima es opcional: la ubicación se solicita solo después de tocar Tocá para ver el clima. Las coordenadas se redondean a dos decimales (aproximadamente 1 km) antes de enviarse a Open-Meteo para consultar el pronóstico.
 
-Al elegir un degradé, se aplica como fondo de pantalla del sistema en inicio y bloqueo. Si después elegís un fondo propio, Fresh Launcher lo conserva hasta que selecciones otro degradé.
+La primera vez que se abre, Fresh Launcher pregunta si querés usar su degradé también como fondo de pantalla del teléfono (inicio y bloqueo). Volver al inicio se ve más fluido, pero reemplaza tu fondo actual. Si mantenés el tuyo, el degradé se muestra solo dentro de la app. Lo podés cambiar cuando quieras en Configuración.
 
 Requiere Android 8.0 o posterior. La selección de idioma por app requiere Android 13 o posterior.

@@ -49,7 +49,7 @@
 2. Abrila y, si Android lo pide, permití instalar apps desde el navegador o el administrador de archivos.
 3. Tocá el botón de inicio y elegí **Fresh Launcher**, o configuralo en *Ajustes → Aplicaciones → Aplicaciones predeterminadas → Aplicación de inicio*.
 
-Aviso: la primera vez que se abre, Fresh Launcher pone su degradé como fondo de pantalla de inicio y de bloqueo (ver [Permisos y privacidad](#permisos-y-privacidad)).
+La primera vez que se abre, Fresh Launcher pregunta si querés usar su degradé también como fondo de pantalla del teléfono. Volver al inicio se ve más fluido, pero reemplaza tu fondo actual de inicio y de bloqueo, y Android no deja que las apps guarden una copia. Si mantenés el tuyo, el degradé se muestra solo dentro de la app. Lo podés cambiar cuando quieras en Configuración (ver [Permisos y privacidad](#permisos-y-privacidad)).
 
 Para recibir las actualizaciones automáticamente, agregá `https://github.com/JuanFer-NL/fresh-launcher` en [Obtainium](https://github.com/ImranR98/Obtainium). Todas las versiones están firmadas con la misma clave; podés verificarla como explica [SECURITY.md](SECURITY.md#verifying-a-release).
 
@@ -89,12 +89,13 @@ Sin `keystore.properties`, la release se genera sin firmar.
 | `<queries>` para actividades de launcher (sin `QUERY_ALL_PACKAGES`) | Listar las apps que podés abrir, y nada más. |
 | `ACCESS_COARSE_LOCATION` | Solo para el clima, y solo después de tocar *Tocá para ver el clima*. Las coordenadas se redondean a dos decimales (~1 km) antes de enviarse a [Open-Meteo](https://open-meteo.com/). |
 | `INTERNET` | La consulta del clima a Open-Meteo. No se envía nada más a ningún lado. |
-| `SET_WALLPAPER` | El degradé elegido se pone como **fondo de pantalla del sistema, en inicio y bloqueo**. Así Android usa su transición nativa de "volver al inicio". Si después ponés un fondo propio, el launcher lo respeta salvo que vuelvas a elegir uno de sus degradés. |
+| `SET_WALLPAPER` | **Solo si aceptás** (al abrir la app por primera vez o después en Configuración), el degradé elegido se pone como **fondo de pantalla del sistema, en inicio y bloqueo**. Así Android usa su transición nativa de "volver al inicio". Si después ponés un fondo propio, el launcher lo respeta y vuelve a dibujar el degradé solo dentro de la app. |
 
 ## Limitaciones conocidas
 
 - Android no les da a los launchers de terceros la animación del gesto de inicio del sistema. Fresh Launcher hace su propio zoom corto, pero en algunos equipos la transición puede verse menos fluida que con el launcher de fábrica (pasa lo mismo con otros launchers de terceros).
 - Algunos Samsung oscurecen el fondo de pantalla en modo oscuro, y los degradés claros se ven más apagados.
+- Si mantenés tu propio fondo, al volver al inicio se ve un instante antes de que aparezca el degradé.
 
 ## Estructura
 

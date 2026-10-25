@@ -62,6 +62,8 @@ import com.fresh.launcher.ui.LauncherTheme
 import com.fresh.launcher.ui.LocalLauncherColors
 import com.fresh.launcher.ui.LocalReduceMotion
 import com.fresh.launcher.ui.MeshWallpaperStyle
+import com.fresh.launcher.ui.SystemWallpaperDialog
+import com.fresh.launcher.ui.MeshBackground
 import com.fresh.launcher.ui.MeshWallpapers
 import com.fresh.launcher.ui.WallpaperApplier
 import com.fresh.launcher.ui.meshWallpaper
@@ -145,16 +147,43 @@ private fun Launcher(homePresses: Int) {
         if (granted) refreshWeather()
     }
 
-    fun selectWallpaper(style: MeshWallpaperStyle) {
-        settings = settings.copy(wallpaperId = style.id, wallpaperChangedAt = System.currentTimeMillis())
-        settingsStore.save(settings)
+    // Si el fondo de pantalla del sistema es un degradé nuestro. Si no lo es, el degradé se dibuja
+    // dentro de la app (MeshBackground)
+    var wallpaperIsOurs by remember { mutableStateOf(WallpaperApplier.isOurs(context)) }
+    // El usuario activó en la configuración "usar también como fondo del teléfono" y falta confirmar
+    var confirmSystemWallpaper by remember { mutableStateOf(false) }
+
+    fun applySystemWallpaper(style: MeshWallpaperStyle) {
         val isDark = colors.isDark
-        scope.launch(Dispatchers.Default) {
-            runCatching { WallpaperApplier.apply(context, style, isDark, force = true) }
+        scope.launch {
+            withContext(Dispatchers.Default) {
+                runCatching { WallpaperApplier.apply(context, style, isDark, force = true) }
+            }
+            wallpaperIsOurs = WallpaperApplier.isOurs(context)
         }
     }
 
+    /** Elegir un degradé solo toca el fondo del sistema si el usuario lo aceptó. */
+    fun selectWallpaper(style: MeshWallpaperStyle) {
+        settings = settings.copy(wallpaperId = style.id, wallpaperChangedAt = System.currentTimeMillis())
+        settingsStore.save(settings)
+        if (settings.systemWallpaper == true) applySystemWallpaper(style)
+    }
+
+    fun setSystemWallpaper(enabled: Boolean) {
+        settings = settings.copy(systemWallpaper = enabled)
+        settingsStore.save(settings)
+        if (enabled) applySystemWallpaper(meshWallpaper(settings.wallpaperId))
+    }
+
     LifecycleEventEffect(Lifecycle.Event.ON_RESUME) {
+        wallpaperIsOurs = WallpaperApplier.isOurs(context)
+        // Si el usuario puso otro fondo desde los ajustes del sistema, se respeta: el degradé pasa a
+        // dibujarse solo dentro de la app y ya no se vuelve a aplicar por su cuenta
+        if (settings.systemWallpaper == true && WallpaperApplier.hasEverApplied(context) && !wallpaperIsOurs) {
+            settings = settings.copy(systemWallpaper = false)
+            settingsStore.save(settings)
+        }
         // Cambio automático: se revisa al volver al inicio, sin trabajo en segundo plano
         if (settings.autoWallpaper &&
             System.currentTimeMillis() - settings.wallpaperChangedAt >= settings.autoWallpaperDays * DAY_MS
@@ -174,9 +203,10 @@ private fun Launcher(homePresses: Int) {
         if (weatherEnabled && weatherRepo.isStale(weather)) refreshWeather()
     }
 
-    // El fondo elegido es el fondo de pantalla del sistema (inicio y bloqueo); al cambiar el tema
-    // se regenera su variante clara u oscura, solo si el fondo puesto sigue siendo nuestro
+    // Si el usuario aceptó usar el degradé como fondo del sistema, al cambiar el tema se regenera su
+    // variante clara u oscura, solo si el fondo puesto sigue siendo nuestro
     LaunchedEffect(colors.isDark) {
+        if (settings.systemWallpaper != true) return@LaunchedEffect
         withContext(Dispatchers.Default) {
             runCatching { WallpaperApplier.apply(context, meshWallpaper(settings.wallpaperId), colors.isDark, force = false) }
         }
@@ -289,6 +319,11 @@ private fun Launcher(homePresses: Int) {
             }
         }
 
+        // Sin el degradé como fondo del sistema, se dibuja dentro de la app y el fondo del usuario no se toca
+        if (settings.systemWallpaper != true || !wallpaperIsOurs) {
+            MeshBackground(meshWallpaper(settings.wallpaperId), colors.isDark)
+        }
+
         Column(
             Modifier
                 .fillMaxSize()
@@ -387,7 +422,29 @@ private fun Launcher(homePresses: Int) {
                     AppLanguages.set(context, it)
                 },
                 onSelectWallpaper = { selectWallpaper(it) },
+                systemWallpaper = settings.systemWallpaper == true,
+                onSystemWallpaperChange = { enabled ->
+                    // Activarlo reemplaza el fondo del usuario: siempre se confirma antes
+                    if (enabled) confirmSystemWallpaper = true else setSystemWallpaper(false)
+                },
                 onBack = { settingsOpen = false },
+            )
+        }
+
+        // Primera apertura: el fondo del usuario no se toca hasta que responde
+        if (settings.systemWallpaper == null) {
+            SystemWallpaperDialog(
+                onApply = { setSystemWallpaper(true) },
+                onKeep = { setSystemWallpaper(false) },
+            )
+        }
+        if (confirmSystemWallpaper) {
+            SystemWallpaperDialog(
+                onApply = {
+                    confirmSystemWallpaper = false
+                    setSystemWallpaper(true)
+                },
+                onKeep = { confirmSystemWallpaper = false },
             )
         }
     }

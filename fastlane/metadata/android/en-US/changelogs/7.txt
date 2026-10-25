@@ -1,0 +1,1 @@
+Fresh Launcher now asks before changing your phone's wallpaper. If you keep yours, the gradient is shown only inside the app, and you can switch anytime in Settings with the new "Also use as phone wallpaper" option. Choosing a gradient no longer replaces your wallpaper unless you accepted it. Also: centered buttons and a tidier home hint. Store metadata by @Sinkleberg.

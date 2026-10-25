@@ -164,7 +164,6 @@ fun FavoritesList(
         BasicText(
             text = stringResource(R.string.favorites_empty),
             style = LauncherType.body.copy(color = colors.onMesh),
-            modifier = Modifier.padding(end = 48.dp),
         )
         return
     }

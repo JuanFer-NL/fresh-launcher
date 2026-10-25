@@ -231,6 +231,17 @@ val MeshWallpapers = listOf(
 
 fun meshWallpaper(id: String): MeshWallpaperStyle = MeshWallpapers.firstOrNull { it.id == id } ?: MeshWallpapers.first()
 
+/**
+ * El degradé dibujado dentro de la app, para quien prefirió conservar su fondo de pantalla.
+ * Android anima el fondo del sistema al volver al inicio, así que en ese caso la transición
+ * muestra un instante el fondo del usuario antes de que aparezca este.
+ */
+@Composable
+fun MeshBackground(style: MeshWallpaperStyle, isDark: Boolean, modifier: Modifier = Modifier) {
+    val palette = style.palette(isDark)
+    Canvas(modifier.fillMaxSize()) { drawMesh(palette, isDark) }
+}
+
 private fun DrawScope.drawMesh(palette: MeshPalette, isDark: Boolean) {
     drawRect(palette.base)
     palette.blobs.forEach { drawBlob(it) }
@@ -305,16 +316,27 @@ object WallpaperApplier {
     // v2: también en la pantalla de bloqueo.
     private const val VERSION = 2
 
+    private fun prefs(context: Context) = context.getSharedPreferences("wallpaper", Context.MODE_PRIVATE)
+
+    /** true si el fondo de pantalla del sistema es un degradé que puso Fresh Launcher. */
+    fun isOurs(context: Context): Boolean = runCatching {
+        prefs(context).getInt("id", Int.MIN_VALUE) ==
+            WallpaperManager.getInstance(context).getWallpaperId(WallpaperManager.FLAG_SYSTEM)
+    }.getOrDefault(false)
+
+    /** true si alguna vez se aplicó un degradé (instalaciones anteriores a la pregunta inicial). */
+    fun hasEverApplied(context: Context): Boolean = prefs(context).contains("variant")
+
     @Synchronized
     fun apply(context: Context, style: MeshWallpaperStyle, isDark: Boolean, force: Boolean) {
         val manager = WallpaperManager.getInstance(context)
         if (!manager.isWallpaperSupported || !manager.isSetWallpaperAllowed) return
-        val prefs = context.getSharedPreferences("wallpaper", Context.MODE_PRIVATE)
+        val prefs = prefs(context)
 
         val variant = "${style.id}-${if (isDark) "dark" else "light"}-$VERSION"
         val ours = prefs.getInt("id", Int.MIN_VALUE) == manager.getWallpaperId(WallpaperManager.FLAG_SYSTEM)
-        val firstRun = !prefs.contains("variant")
-        if (!force && !firstRun && !ours) return
+        // Nunca se aplica por primera vez sin [force]: eso solo pasa cuando el usuario lo aceptó
+        if (!force && !ours) return
         if (ours && prefs.getString("variant", null) == variant) return
 
         val (width, height) = screenSize(context)

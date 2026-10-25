@@ -10,6 +10,6 @@ Features:
 
 No ads, analytics, trackers or accounts. Weather is optional: location is requested only after you tap Tap for weather. Coordinates are rounded to two decimals (about 1 km) before being sent to Open-Meteo for the forecast.
 
-Choosing a gradient sets the system wallpaper on both the home and lock screens. If you later choose your own wallpaper, Fresh Launcher keeps it until you select another gradient.
+The first time it opens, Fresh Launcher asks whether to also use its gradient as your phone's wallpaper (home and lock screens). It makes going back home look smoother, but replaces your current wallpaper. If you keep yours, the gradient is shown only inside the app. You can change this anytime in Settings.
 
 Requires Android 8.0 or later. Per-app language selection requires Android 13 or later.

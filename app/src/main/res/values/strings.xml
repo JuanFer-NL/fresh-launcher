@@ -46,5 +46,13 @@
     <string name="fewer_days">Fewer days</string>
     <string name="more_days">More days</string>
 
+    <string name="wallpaper_hint_app">Shown only inside Fresh Launcher.</string>
+    <string name="system_wallpaper_title">Use the Fresh wallpaper on your phone too?</string>
+    <string name="system_wallpaper_body">Going back to the home screen looks smoother when Fresh\'s background is also your phone\'s wallpaper. This replaces your current home and lock screen wallpaper, and Android doesn\'t let apps keep a copy, so make sure it\'s saved somewhere if you want it back. If you keep yours, Fresh shows its background only inside the app.</string>
+    <string name="system_wallpaper_keep">Keep mine</string>
+    <string name="system_wallpaper_apply">Apply Fresh wallpaper</string>
+    <string name="system_wallpaper_toggle">Also use as phone wallpaper</string>
+    <string name="system_wallpaper_toggle_desc">Smoother transition when going home. Replaces your home and lock screen wallpaper.</string>
+
     <string name="weather_attribution">Weather data by Open-Meteo.com</string>
 </resources>

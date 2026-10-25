@@ -49,7 +49,7 @@
 2. Open it and allow installing apps from your browser or file manager if Android asks.
 3. Press the home button and choose **Fresh Launcher**, or set it in *Settings → Apps → Default apps → Home app*.
 
-Heads-up: the first time it opens, Fresh Launcher sets its gradient as your wallpaper on the home and lock screens (see [Permissions and privacy](#permissions-and-privacy)).
+The first time it opens, Fresh Launcher asks whether to also use its gradient as your phone's wallpaper. It makes going back home look smoother, but it replaces your current home and lock screen wallpaper, and Android doesn't let apps keep a copy. If you keep yours, the gradient is shown only inside the app. You can change this anytime in Settings (see [Permissions and privacy](#permissions-and-privacy)).
 
 To get updates automatically, add `https://github.com/JuanFer-NL/fresh-launcher` in [Obtainium](https://github.com/ImranR98/Obtainium). Every release is signed with the same key; you can verify it as described in [SECURITY.md](SECURITY.md#verifying-a-release).
 
@@ -89,12 +89,13 @@ Without `keystore.properties` the release build is produced unsigned.
 | `<queries>` for launcher activities (no `QUERY_ALL_PACKAGES`) | To list the apps you can open, and nothing else. |
 | `ACCESS_COARSE_LOCATION` | Only for the weather, and only after you tap *Tap for weather*. Coordinates are rounded to two decimals (~1 km) before being sent to [Open-Meteo](https://open-meteo.com/). |
 | `INTERNET` | The weather request to Open-Meteo. Nothing else is sent anywhere. |
-| `SET_WALLPAPER` | The chosen gradient is set as the **system wallpaper on both the home and lock screens**. This lets Android use its native "back to home" transition. If you later set a wallpaper of your own, the launcher keeps it unless you pick one of its gradients again. |
+| `SET_WALLPAPER` | **Only if you accept** (when you first open the app or later in Settings), the chosen gradient is set as the **system wallpaper on both the home and lock screens**. This lets Android use its native "back to home" transition. If you later set a wallpaper of your own, the launcher respects it and goes back to drawing the gradient only inside the app. |
 
 ## Known limitations
 
 - Android does not give third-party launchers the system's home-gesture animation. Fresh Launcher plays its own short zoom-in instead, but the hand-off may look less fluid than the stock launcher on some devices (the same happens with other third-party launchers).
 - Some Samsung devices dim the wallpaper in dark mode, which makes the light gradients look darker.
+- If you keep your own wallpaper, it shows for a moment when going back home, before the gradient appears.
 
 ## Project layout
 

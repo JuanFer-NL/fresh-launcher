@@ -46,5 +46,13 @@
     <string name="fewer_days">Menos días</string>
     <string name="more_days">Más días</string>
 
+    <string name="wallpaper_hint_app">Se muestra solo dentro de Fresh Launcher.</string>
+    <string name="system_wallpaper_title">¿Usar el fondo de Fresh también en tu teléfono?</string>
+    <string name="system_wallpaper_body">Volver al inicio se ve más fluido si el fondo de Fresh también es el fondo de pantalla de tu teléfono. Esto reemplaza tu fondo actual de inicio y de bloqueo, y Android no deja que las apps guarden una copia: si lo querés conservar, asegurate de tenerlo guardado. Si mantenés el tuyo, Fresh muestra su fondo solo dentro de la app.</string>
+    <string name="system_wallpaper_keep">Mantener el mío</string>
+    <string name="system_wallpaper_apply">Aplicar el de Fresh</string>
+    <string name="system_wallpaper_toggle">Usar también como fondo del teléfono</string>
+    <string name="system_wallpaper_toggle_desc">La transición al volver al inicio es más fluida. Reemplaza tu fondo de inicio y de bloqueo.</string>
+
     <string name="weather_attribution">Datos del clima: Open-Meteo.com</string>
 </resources>

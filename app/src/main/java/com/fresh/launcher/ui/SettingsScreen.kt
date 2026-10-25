@@ -61,6 +61,9 @@ fun SettingsScreen(
     language: AppLanguage?,
     onLanguageChange: (AppLanguage) -> Unit,
     onSelectWallpaper: (MeshWallpaperStyle) -> Unit,
+    /** Si el degradé también es el fondo de pantalla del sistema. */
+    systemWallpaper: Boolean,
+    onSystemWallpaperChange: (Boolean) -> Unit,
     onBack: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -96,7 +99,7 @@ fun SettingsScreen(
             )
         }
 
-        WallpaperSection(settings, onSettingsChange, onSelectWallpaper)
+        WallpaperSection(settings, onSettingsChange, onSelectWallpaper, systemWallpaper, onSystemWallpaperChange)
         Divider()
 
         // null = el sistema no soporta idioma por app (Android 12 o anterior)
@@ -253,6 +256,8 @@ private fun WallpaperSection(
     settings: LauncherSettings,
     onSettingsChange: (LauncherSettings) -> Unit,
     onSelectWallpaper: (MeshWallpaperStyle) -> Unit,
+    systemWallpaper: Boolean,
+    onSystemWallpaperChange: (Boolean) -> Unit,
 ) {
     val colors = LocalLauncherColors.current
     Column(Modifier.padding(vertical = 16.dp)) {
@@ -262,7 +267,7 @@ private fun WallpaperSection(
             modifier = Modifier.padding(horizontal = 8.dp),
         )
         BasicText(
-            stringResource(R.string.wallpaper_hint),
+            stringResource(if (systemWallpaper) R.string.wallpaper_hint else R.string.wallpaper_hint_app),
             style = LauncherType.body.copy(color = colors.onDrawerMuted, fontSize = 14.sp, lineHeight = 20.sp),
             modifier = Modifier.padding(start = 8.dp, end = 8.dp, top = 4.dp),
         )
@@ -304,6 +309,37 @@ private fun WallpaperSection(
 
         Spacer(Modifier.height(12.dp))
         AutoWallpaperRow(settings, onSettingsChange)
+        SystemWallpaperRow(systemWallpaper, onSystemWallpaperChange)
+    }
+}
+
+/** "Usar también como fondo del teléfono": activarlo pide confirmación (la maneja quien llama). */
+@Composable
+private fun SystemWallpaperRow(checked: Boolean, onCheckedChange: (Boolean) -> Unit) {
+    val colors = LocalLauncherColors.current
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier
+            .padding(top = 12.dp)
+            .fillMaxWidth()
+            .heightIn(min = 72.dp)
+            .clip(RoundedCornerShape(16.dp))
+            .toggleable(value = checked, role = Role.Switch, onValueChange = onCheckedChange)
+            .padding(horizontal = 8.dp, vertical = 12.dp),
+    ) {
+        Column(Modifier.weight(1f)) {
+            BasicText(
+                stringResource(R.string.system_wallpaper_toggle),
+                style = SectionTitle.copy(color = colors.onDrawer, fontSize = 16.sp),
+            )
+            BasicText(
+                stringResource(R.string.system_wallpaper_toggle_desc),
+                style = LauncherType.body.copy(color = colors.onDrawerMuted, fontSize = 14.sp, lineHeight = 20.sp),
+                modifier = Modifier.padding(top = 4.dp),
+            )
+        }
+        Spacer(Modifier.size(16.dp))
+        Toggle(checked = checked, onCheckedChange = null)
     }
 }
 
